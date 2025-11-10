@@ -1,32 +1,49 @@
 import { Letters } from "./letters.js";
 
-let hangID = 0; // hangman vector ID
-let usedLts = []; // used letters
+let hangID = 1; // Current hangman step
 
-/**
- *  DOM Elements initializer
- */
+// ------------------------
+// DOM Elements
+// ------------------------
 const lettersArea = document.getElementById("letters");
+const hangmanVect = document.getElementById("hangman");
 const hiddenWord = document.getElementById("hiddenword");
 
-const createLetter = (letter) => {
-  const btn = document.createElement("buttton");
+// ------------------------
+// Game State
+// ------------------------
+let currentWord = "";
+let lettersArray = [];
+let displayArray = [];
+
+/**
+ * Creates a clickable letter button
+ */
+const createLetterButton = (letter) => {
+  const btn = document.createElement("button");
   btn.textContent = letter;
   btn.classList.add("letter");
-  lettersArea.append(btn);
+
+  btn.addEventListener("click", () => handleGuess(letter, btn));
+
+  lettersArea.appendChild(btn);
 };
 
-Letters.forEach((letter) => {
-  createLetter(letter);
-});
-
-const randomWord = () => {
-  fetch("./words.json")
-    .then((response) => response.json())
-    .then((words) => {
-      const randomWord = words[Math.floor(Math.random() * words.length)];
-    })
-    .catch((err) => console.error("Error loading words:", err));
+/**
+ * Initialize all letter buttons
+ */
+const initLetterButtons = () => {
+  Letters.forEach(createLetterButton);
 };
 
-randomWord();
+
+/**
+ * Initialize the game
+ */
+const initGame = () => {
+  initLetterButtons();
+  loadRandomWord();
+};
+
+
+initGame();
