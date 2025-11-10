@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400"
+   height="500"
+   viewBox="0 0 105.83333 132.29167"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <ellipse
+       style="fill:#666666;stroke:#000000;stroke-width:0.448122;stroke-dasharray:none;stroke-opacity:1"
+       id="path1"
+       cx="28.583998"
+       cy="121.71349"
+       rx="25.41539"
+       ry="8.1208935" />
+    <rect
+       style="fill:#4d4d4d;stroke-width:59.1678"
+       id="rect2"
+       width="4.661994"
+       height="117.9613"
+       x="27.531288"
+       y="4.0529795"
+       ry="0" />
+    <ellipse
+       style="fill:#4d4d4d;stroke-width:10.7333"
+       id="path1-1"
+       cx="29.319498"
+       cy="120.81143"
+       rx="6.8245034"
+       ry="2.1806107" />
+    <rect
+       style="fill:#4d4d4d;stroke-width:43.9733"
+       id="rect3"
+       width="40.409058"
+       height="0.85071683"
+       x="27.51211"
+       y="3.6195495" />
+    <rect
+       style="fill:#4d4d4d;stroke-width:53.5785"
+       id="rect4"
+       width="0.70551455"
+       height="5.0393896"
+       x="26.90719"
+       y="-22.754948"
+       transform="rotate(46.584679)" />
+  </g>
+</svg>
