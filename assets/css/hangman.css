@@ -1,107 +1,137 @@
 @import url("https://fonts.googleapis.com/css2?family=Kablammo&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 :root {
-  --color-primary: rgb(150, 0, 0);
+    --color-primary: rgb(255, 119, 0);
 }
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-color: rgb(255, 255, 255);
-  font-family: "Rubik", sans-serif;
+    background-color: rgb(255, 255, 255);
+    font-family: "Rubik", sans-serif;
 }
 
 /* start header items */
 header {
-  width: 100%;
-  height: 80px;
-  position: absolute;
-  background-color: var(--color-primary);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  top: 0;
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 99;
 }
 
 header .name {
-  font-family: "Kablammo", system-ui;
-  font-size: 2.9rem;
-  color: #fff;
+    font-family: "Kablammo", system-ui;
+    font-size: 2.9rem;
+    color: #fff;
 }
 
 header .links {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  gap: 4;
-  right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 4;
+    right: 0;
 }
 
 header .repo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.42rem;
-  cursor: pointer;
-  color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.42rem;
+    cursor: pointer;
+    color: #ffffff;
 }
 
 /* end header items */
 .game {
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    gap: 7rem;
+    top: 50%;
+    left: 50%;
 }
 .hangman {
-  width: 500px;
-  height: 600px;
-  background-image: url("../vectors/v7.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: scale(0.6);
-  transform-origin: center;
+    width: 258px;
+    height: 478px;
+    position: absolute;
+    top: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .letters {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0.34rem;
 }
 
 .letter {
-  background-color: rgb(231, 231, 231);
-  border: solid 1px #000;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: #010101;
-  padding: 0.34rem;
-  margin: 0.45rem;
-  border-radius: 0.45rem;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 0.34rem;
+    margin: 0.45rem;
+    border: none;
+    border-radius: 0.45rem;
+    outline: none;
 }
 
-.hiddenword {
-  display: flex;
-  flex-direction: row;
-  color:red;
-  gap: 0.32rem;
+.letter:hover {
+    background-color: var(--color-primary);
+    color: #fff;
 }
-.hiddenword .letter {
-  width: 45px;
-  height: 45px;
-  background-color: aqua;
+.hiddenword {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    gap: 0.32rem;
+    margin-top: 20rem;
+}
+
+/* hangmam vector assets */
+
+.hangman[data-step="1"] {
+    background-image: url("../vectors/v1.svg");
+}
+
+.hangman[data-step="2"] {
+    background-image: url("../vectors/v2.svg");
+}
+
+.hangman[data-step="3"] {
+    background-image: url("../vectors/v3.svg");
+}
+
+.hangman[data-step="4"] {
+    background-image: url("../vectors/v4.svg");
+}
+.hangman[data-step="5"] {
+    background-image: url("../vectors/v5.svg");
+}
+
+.hangman[data-step="6"] {
+    background-image: url("../vectors/v6.svg");
 }
