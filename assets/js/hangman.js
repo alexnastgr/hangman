@@ -16,6 +16,26 @@ let currentWord = "";
 let lettersArray = [];
 let displayArray = [];
 
+
+
+/**
+ * Select a random word from the JSON file
+ */
+const loadRandomWord =  () => {
+  try {
+    const response =  fetch("./words.json");
+    const words =  response.json();
+
+    currentWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
+    lettersArray = currentWord.split("");
+
+    renderHiddenWord();
+  } catch (err) {
+    console.error("Error loading words:", err);
+  }
+};
+
+
 /**
  * Creates a clickable letter button
  */
