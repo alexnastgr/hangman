@@ -17,6 +17,13 @@ let lettersArray = [];
 let displayArray = [];
 
 
+/**
+ * Render the hidden word
+ */
+const renderHiddenWord = () => {
+  hiddenWord.textContent = displayArray.join(" ");
+};
+
 
 /**
  * Select a random word from the JSON file
@@ -52,6 +59,47 @@ const createLetterButton = (letter) => {
 
   lettersArea.appendChild(btn);
 };
+
+
+
+/**
+ * Check if player has won
+ */
+const checkWinCondition = () => {
+  if (!displayArray.includes("_")) {
+    alert(`You won! The word was: ${currentWord}`);
+  }
+};
+
+
+
+
+/**
+ * Handle a letter guess
+ */
+const handleGuess = (letter, btn) => {
+  btn.disabled = true;
+
+  let correctGuess = false;
+
+  lettersArray.forEach((ltr, idx) => {
+    if (ltr === letter) {
+      displayArray[idx] = letter;
+      correctGuess = true;
+    }
+  });
+
+  renderHiddenWord();
+
+  if (!correctGuess) {
+    hangID++;
+    hangmanVect.dataset.step = hangID;
+    console.log("Wrong guess, hangman state:", hangID);
+  }
+
+  checkWinCondition();
+};
+
 
 /**
  * Initialize all letter buttons
