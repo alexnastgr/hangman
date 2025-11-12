@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/hangman.css" />
-    <title>Hangman.js</title>
-  </head>
-  <body>
-    <!-- header  -->
-    <header>
-      <div class="name">HangMan</div>
-    </header>
 
-    <!-- main game -->
-    <div class="game">
-      <!-- hangman vector -->
-      <div class="hangman"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/hangman.css" />
+  <title>Hangman.js</title>
+</head>
 
-      <!-- current word letters -->
-      <div class="hiddenword" id="hiddenword"></div>
+<body>
+  <!-- header  -->
+  <header>
+    <div class="name">HangMan</div>
+  </header>
 
-      <!-- letters container -->
-      <div class="letters" id="letters"></div>
-    </div>
+  <!-- main game -->
+  <div class="game">
+    <!-- hangman vector -->
+    <div class="hangman" id="hangman"></div>
 
-    <script type="module" src="./assets/js/hangman.js"></script>
-  </body>
+    <!-- current word letters -->
+    <div class="hiddenword" id="hiddenword"></div>
+
+    <!-- letters container -->
+    <div class="letters" id="letters"></div>
+  </div>
+
+  <script type="module" src="./assets/js/hangman.js"></script>
+</body>
+
 </html>
