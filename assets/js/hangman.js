@@ -21,13 +21,17 @@ let displayArray = [];
 /**
  * Select a random word from the JSON file
  */
-const loadRandomWord =  () => {
+const loadRandomWord = async () => {
   try {
-    const response =  fetch("./words.json");
-    const words =  response.json();
+    const response = await fetch("./words.json");
+    const words = await response.json();
 
     currentWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
     lettersArray = currentWord.split("");
+
+    displayArray = lettersArray.map((ltr, idx) =>
+      idx === 0 || idx === lettersArray.length - 1 ? ltr : "_"
+    );
 
     renderHiddenWord();
   } catch (err) {
